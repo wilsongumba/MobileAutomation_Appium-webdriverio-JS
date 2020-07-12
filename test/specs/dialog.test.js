@@ -54,7 +54,7 @@ describe('Dialog', ()=>{
 
     });
 
-    it.only('Verify isSelected, isEnabled & isDisplayed', () => {
+    it('Verify isSelected, isEnabled & isDisplayed', () => {
         dialog.viewBtn.click();
         driver.touchAction([
             { action: 'press', x: 500, y: 1400 },
