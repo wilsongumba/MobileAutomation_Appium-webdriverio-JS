@@ -28,7 +28,7 @@ describe('Dialog', ()=>{
         dialog.dialogOkBtn.click();
     });
 
-    it.only('Verify app adjusts when orientation is changed', () => {
+    it('Verify app adjusts when orientation is changed', () => {
         console.log(driver.getOrientation());
         driver.saveScreenshot('./screenshots/portrait.png')
 
@@ -61,6 +61,25 @@ describe('Dialog', ()=>{
 
         dialog.viewBtn.click();
         //dialog.tabsBtn.click();
+    });
+
+    it.only('Verify the repeat alarm options has attribute checked set to true when selected', ()=>{
+        let isChecked, text;
+
+        dialog.appBtn.click();
+        dialog.alertDialogBtn.click();
+        dialog.repeatAlarmBtn.click();
+
+        text = dialog._weekdayCheckbox(0).getText();
+        expect(text).equal('Every Monday');
+
+        isChecked = dialog._weekdayCheckbox(0).getAttribute('checked');
+        expect(isChecked).equal('false');
+
+        dialog._weekdayCheckbox(0).click();
+
+        isChecked = dialog._weekdayCheckbox(0).getAttribute('checked');
+        expect(isChecked).equal('true');
     });
 
     // Execute a block of code after every test

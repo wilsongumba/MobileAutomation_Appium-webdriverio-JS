@@ -14,6 +14,11 @@ class Dialog{
     //get app button using xpath
     //get appButton() {return $('//android.widget.TextView[@content-desc="App"]')}
 
-  
+
+    get repeatAlarmBtn() {return $('//android.widget.Button[@content-desc="Repeat alarm"]')};
+
+    _weekdayCheckbox(index){
+        return $(`//android.widget.CheckedTextView[@index="${index}"]`);
+    }
 }
 module.exports = new Dialog();
