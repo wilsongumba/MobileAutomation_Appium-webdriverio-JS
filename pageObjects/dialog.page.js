@@ -26,8 +26,32 @@ class Dialog{
 
     get repeatAlarmBtn() {return $('//android.widget.Button[@content-desc="Repeat alarm"]')};
 
+
+    // #region Activity
+    get cancelDialogMsgBtn() { return $('//android.widget.Button[@content-desc="OK Cancel dialog with a message"]'); }
+    get cancelLongDialogMsgBtn() { return $('//android.widget.Button[@content-desc="OK Cancel dialog with a long message"]'); }
+    get cancelUltraLongDialogMsgBtn() { return $('//android.widget.Button[@content-desc="OK Cancel dialog with ultra long message"]'); }
+    get dialogModalTitle() { return $('//android.widget.TextView[@resource-id="android:id/alertTitle"]'); }
+    get dialogModalMsg() { return $('//android.widget.TextView[@resource-id="android:id/message"]'); }
+    // #endregion
+
+
+
     _weekdayCheckbox(index){
         return $(`//android.widget.CheckedTextView[@index="${index}"]`);
     }
+
+
+    // #region Activity
+    getDialogModalTitle() {
+        let title = this.dialogModalTitle.getText();
+        return title;
+    }
+
+    getDialogModalMsg() {
+        let msg = this.dialogModalMsg.getText();
+        return msg;
+    }
+  // #endregion
 }
 module.exports = new Dialog();
