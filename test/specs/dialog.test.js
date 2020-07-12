@@ -28,6 +28,22 @@ describe('Dialog', ()=>{
         dialog.dialogOkBtn.click();
     });
 
+    it.only('Verify app adjusts when orientation is changed', () => {
+        console.log(driver.getOrientation());
+        driver.saveScreenshot('./screenshots/portrait.png')
+
+        driver.setOrientation('LANDSCAPE');
+        driver.pause(1000);
+        driver.saveScreenshot('./screenshots/landscape.png');
+
+        dialog.appBtn.click();
+
+        driver.setOrientation('PORTRAIT');
+        driver.back();
+
+        driver.saveScreenshot('./screenshots/portraitafterBack.png')
+    });
+
     it('Scroll', () => {
         dialog.viewBtn.click();
         driver.touchAction([
@@ -36,6 +52,15 @@ describe('Dialog', ()=>{
             'release'
         ])
 
+    });
+
+    it('Verify Timeouts', () => {
+        driver.setImplicitTimeout(10000);
+        //driver.setTimeouts(10000);
+        //driver.pause(10000);
+
+        dialog.viewBtn.click();
+        //dialog.tabsBtn.click();
     });
 
     // Execute a block of code after every test
