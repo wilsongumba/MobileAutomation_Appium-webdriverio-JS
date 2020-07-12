@@ -14,6 +14,15 @@ class Dialog{
     //get app button using xpath
     //get appButton() {return $('//android.widget.TextView[@content-desc="App"]')}
 
+    get tabsBtn() {return $('//android.widget.TextView[@content-desc="Tabs"]')};
+    get contentByIdBtn() {return $('//android.widget.TextView[@content-desc="1. Content By Id"]')};
+
+    get tabs() {return $$('android.widget.LinearLayout')};
+    get tab1Details() {return $('~tab1')};
+    get tab2Details() {return $('~tab2')};
+    get tab3Details() {return $('~tab3')};
+
+
 
     get repeatAlarmBtn() {return $('//android.widget.Button[@content-desc="Repeat alarm"]')};
 
