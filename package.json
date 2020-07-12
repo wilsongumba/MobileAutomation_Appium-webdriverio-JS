@@ -19,6 +19,7 @@
     "@wdio/selenium-standalone-service": "^6.1.14",
     "@wdio/spec-reporter": "^6.1.23",
     "@wdio/sync": "^6.1.14",
-    "appium": "^1.17.1"
+    "appium": "^1.17.1",
+    "chai": "^4.2.0"
   }
 }
