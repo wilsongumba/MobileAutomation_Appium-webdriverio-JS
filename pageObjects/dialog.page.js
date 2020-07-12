@@ -9,6 +9,8 @@ class Dialog{
 
     get dialogOkBtn() {return $('//android.widget.Button[@resource-id="android:id/button1"]');}
     get dialogCancelBtn() {return $('//android.widget.Button[@resource-id="android:id/button2"]');}
+
+    get viewBtn() {return $('//android.widget.TextView[@content-desc="Views"]')};
     //get app button using xpath
     //get appButton() {return $('//android.widget.TextView[@content-desc="App"]')}
 

@@ -3,6 +3,10 @@ const expect = require('chai').expect;
 
 describe('Dialog', ()=>{
 
+    // Execute a block of code before every test
+    beforeEach(() => {
+    });
+
     it('Verify if text entry dialog username and password fields are editable', ()=>{
 
         //dialog.appButton.click();
@@ -22,6 +26,21 @@ describe('Dialog', ()=>{
         expect(text).equal("User X");
 
         dialog.dialogOkBtn.click();
+    });
+
+    it('Scroll', () => {
+        dialog.viewBtn.click();
+        driver.touchAction([
+            { action: 'press', x: 500, y: 1000 },
+            { action: 'moveTo', x: 500, y: 500 },
+            'release'
+        ])
+
+    });
+
+    // Execute a block of code after every test
+    afterEach(() => {
+        driver.reset();
     });
 
 })
